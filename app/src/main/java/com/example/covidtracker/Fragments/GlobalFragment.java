@@ -72,6 +72,7 @@ public class GlobalFragment extends Fragment {
         responseCall.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                assert response.body() != null;
                 Global global = response.body().getGlobal();
                 setGlobalData(global);
                 countriesItems=response.body().getCountries();
