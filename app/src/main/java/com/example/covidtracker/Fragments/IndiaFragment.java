@@ -55,6 +55,7 @@ public class IndiaFragment extends Fragment {
     private TextView activeCount, deathCount, recoveredCount, confirmedCount;
     public static List<RegionalItem> stateList;
     private List<RegionalItem> top5States;
+    private TopFiveIndiaAdapter adapter;
 
 
 
@@ -64,8 +65,10 @@ public class IndiaFragment extends Fragment {
 
         view =inflater.inflate(R.layout.fragment_india, container, false);
         setView(view);
+
         setButtonListener();
         getIndianData();
+
         return view;
     }
 
@@ -97,7 +100,7 @@ public class IndiaFragment extends Fragment {
                     });
 
                     top5States=top5States.subList(0,5);
-                    TopFiveIndiaAdapter adapter=new TopFiveIndiaAdapter(getContext(),top5States);
+                    adapter=new TopFiveIndiaAdapter(getContext(),top5States);
                     topFiveRecyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
 

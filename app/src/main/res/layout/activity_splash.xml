@@ -17,5 +17,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_rawRes="@raw/covidanim"
         app:lottie_autoPlay="true"
-        app:lottie_speed="5"/>
+        app:lottie_speed="5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

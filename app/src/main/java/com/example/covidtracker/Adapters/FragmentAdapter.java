@@ -8,6 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.covidtracker.Fragments.GlobalFragment;
 import com.example.covidtracker.Fragments.IndiaFragment;
+import com.example.covidtracker.Fragments.VaccinationFragment;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -25,6 +26,8 @@ public class FragmentAdapter extends FragmentStateAdapter {
                 return new GlobalFragment();
             case 1:
                 return new IndiaFragment();
+            case 2:
+                return new VaccinationFragment();
             default:
                 return new GlobalFragment();
 
@@ -34,6 +37,6 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 }
