@@ -452,7 +452,7 @@
                      <View
                          android:layout_width="15dp"
                          android:layout_height="match_parent"
-                         android:background="#FFFF00" />
+                         android:background="@color/active" />
 
                      <!--Text view to display python text -->
                      <TextView

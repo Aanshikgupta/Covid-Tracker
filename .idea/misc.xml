@@ -4,12 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_india.xml" value="0.1" />
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/article_item.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_global.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_india.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_news.xml" value="0.1" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_vaccination.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/vaccination_item.xml" value="0.3333333333333333" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -11,7 +11,7 @@
     <color name="confirmed">#54ADFF</color>
     <color name="deaths">#EF5354</color>
     <color name="recovered">#38CC77</color>
-    <color name="active">#FFD83B</color>
+    <color name="active">#FFA000</color>
     <color name="increase">#6A1B4D</color>
     <color name="main_text">#005198</color>
 </resources>

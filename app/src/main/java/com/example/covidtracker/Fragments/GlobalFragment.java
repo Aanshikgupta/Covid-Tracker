@@ -86,7 +86,7 @@ public class GlobalFragment extends Fragment {
                         new PieModel(
                                 "Active",
                                 Integer.parseInt(activeCount.getText().toString()),
-                                Color.parseColor("#FFFF00")));
+                                Color.parseColor("#FFA000")));
                 pieChart.addPieSlice(
                         new PieModel(
                                 "Recovered",

@@ -9,18 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covidtracker.CovidModels.VaccinationModels.CentersItem;
-import com.example.covidtracker.CovidModels.VaccinationModels.SessionsItem;
+import com.example.covidtracker.CovidModels.VaccineModels.SessionsItem;
 import com.example.covidtracker.R;
 
 import java.util.List;
 
 public class VaccineAdapter extends RecyclerView.Adapter<VaccineAdapter.VaccineViewHolder> {
 
-    List<CentersItem> centersItems;
+    List<SessionsItem> centersItems;
     Context context;
 
-    public VaccineAdapter(List<CentersItem> centersItems, Context context) {
+    public VaccineAdapter(List<SessionsItem> centersItems, Context context) {
         this.centersItems = centersItems;
         this.context = context;
     }
@@ -34,7 +33,8 @@ public class VaccineAdapter extends RecyclerView.Adapter<VaccineAdapter.VaccineV
 
     @Override
     public void onBindViewHolder(@NonNull VaccineViewHolder holder, int position) {
-        CentersItem item = centersItems.get(position);
+
+        SessionsItem item= centersItems.get(position);
 
         String completeAddress = item.getBlockName() + ", " + item.getAddress() + ", " + item.getDistrictName() + ", " + item.getStateName();
         String timing = "From : " + item.getFrom() + " to " + item.getTo();
@@ -44,22 +44,11 @@ public class VaccineAdapter extends RecyclerView.Adapter<VaccineAdapter.VaccineV
         holder.timings.setText(timing);
         holder.priceType.setText(item.getFeeType());
 
-        List<SessionsItem> sessionsItems = item.getSessions();
-        if (sessionsItems == null)
-            return;
-        holder.vaccineType.setText(sessionsItems.get(0).getVaccine());
-        holder.ageLimit.setText("Age limit : " + sessionsItems.get(0).getMinAgeLimit());
-        long cap = 0;
-        for (int i = 0; i < sessionsItems.size(); i++)
-            cap += sessionsItems.get(i).getAvailableCapacity();
+        holder.vaccineType.setText(item.getVaccine());
+        holder.ageLimit.setText("Min. Age limit : " + item.getMinAgeLimit());
 
-        holder.availability.setText("Avalilability : " + cap + "");
+        holder.availability.setText("Avalilability : " + item.getAvailableCapacity() + "");
 
-//        if(sessionsItems==null)
-//            return;
-//        else{
-
-//        }
     }
 
     @Override

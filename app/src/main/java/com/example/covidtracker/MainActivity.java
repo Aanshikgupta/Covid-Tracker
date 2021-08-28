@@ -57,9 +57,15 @@ public class MainActivity extends AppCompatActivity {
         ind.setText("India");
         TabLayout.Tab vacc=tabLayout.newTab();
         vacc.setText("Vaccination");
+        TabLayout.Tab news=tabLayout.newTab();
+        news.setText("News");
+
+
         tabLayout.addTab(global,true);
         tabLayout.addTab(ind);
         tabLayout.addTab(vacc);
+        tabLayout.addTab(news);
+
 
 
 
