@@ -22,11 +22,11 @@ public class FragmentAdapter extends FragmentStateAdapter {
     @NotNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position){
+        switch (position) {
             case 0:
-                return new GlobalFragment();
-            case 1:
                 return new IndiaFragment();
+            case 1:
+                return new GlobalFragment();
             case 2:
                 return new VaccinationFragment();
             case 3:
