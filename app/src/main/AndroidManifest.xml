@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.covidtracker">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
@@ -12,18 +13,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTracker">
-        <activity android:name=".SplashActivity">
+        <activity
+            android:name=".PreventionActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
+
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".StateActivity" android:windowSoftInputMode="adjustPan|adjustResize" />
-        <activity android:name=".CountriesActivity" android:windowSoftInputMode="adjustPan|adjustResize"/>
-        <activity android:name=".MainActivity" android:windowSoftInputMode="adjustPan|adjustResize">
 
         </activity>
+        <activity
+            android:name=".StateActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name=".CountriesActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize"></activity>
     </application>
 
 </manifest>

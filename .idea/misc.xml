@@ -3,12 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/activity_countries.xml" value="0.376226826608506" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/activity_prevention.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/activity_splash.xml" value="0.14743589743589744" />
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/activity_state.xml" value="0.376226826608506" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/article_item.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/countries_item.xml" value="0.5" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_global.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_india.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_india.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_news.xml" value="0.1" />
+        <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_prevention.xml" value="0.14743589743589744" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/fragment_vaccination.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/state_item.xml" value="0.3231441048034934" />
         <entry key="..\:/Users/Aanshik gupta/AndroidStudioProjects/CovidTracker/app/src/main/res/layout/top_five_item.xml" value="0.4466666666666667" />

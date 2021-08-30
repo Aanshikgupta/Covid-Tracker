@@ -16,163 +16,185 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:padding="3dp">
-
+            android:weightSum="8"
+            android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/countryTopFiveItem"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
-                android:layout_weight="1"
-                android:gravity="center"
+                android:layout_weight="4"
+                android:gravity="center_vertical"
                 android:text="Country"
+                android:layout_gravity="center_vertical"
                 android:textColor="@color/main_text"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                app:layout_constraintHorizontal_bias="0.551"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
-            <TextView
-                android:textStyle="bold"
-                android:id="@+id/activeItemCount"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
-                android:layout_marginBottom="16dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Active"
-                android:textColor="@color/active"
-                android:textSize="13sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline2" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:textStyle="bold"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toTopOf="@+id/activeItemCount"
+
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toEndOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/active"
+                    app:tint="@color/active" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Active"
+                    android:textColor="@color/active"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
                 android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:gravity="center"
-                android:text="Confirmed"
-                android:textColor="@color/confirmed"
-                android:textSize="13sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                app:layout_constraintStart_toStartOf="@+id/guideline3" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:textStyle="bold"
-                android:id="@+id/recoveredItemCount"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toTopOf="@+id/activeItemCount"
+
+
+                    app:srcCompat="@drawable/confirmed"
+                    app:tint="@color/confirmed" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Confirmed"
+                    android:textColor="@color/confirmed"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
                 android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:gravity="center"
-                android:text="Recovered"
-                android:textColor="@color/recovered"
-                android:textSize="13sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/guideline6"
-                app:layout_constraintStart_toStartOf="@+id/guideline5" />
+                android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline2"
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toTopOf="@+id/activeItemCount"
+
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toEndOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/recovered"
+                    app:tint="@color/recovered" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Recovered"
+                    android:textColor="@color/recovered"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="81dp" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="240dp" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="231dp" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintBottom_toTopOf="@+id/activeItemCount"
-
-                app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                app:layout_constraintStart_toEndOf="@+id/countryTopFiveItem"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/active"
-                app:tint="@color/active" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="319dp" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                app:layout_constraintStart_toStartOf="@+id/guideline3"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_confirmed"
-                app:tint="@color/confirmed" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintBottom_toTopOf="@+id/recoveredItemCount"
-                app:layout_constraintEnd_toStartOf="@+id/guideline6"
-                app:layout_constraintStart_toStartOf="@+id/guideline5"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_recovered"
-                app:tint="@color/recovered" />
-
-            <TextView
-                android:textStyle="bold"
-                android:id="@+id/deathItemCount"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:gravity="center"
-                android:text="Deaths"
-                android:textColor="@color/deaths"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline6" />
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintBottom_toTopOf="@+id/deathItemCount"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline6"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_deaths"
-                app:tint="@color/deaths" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toTopOf="@+id/activeItemCount"
+
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toEndOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/deaths"
+                    app:tint="@color/deaths" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Deaths"
+                    android:textColor="@color/deaths"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
 
 
     </androidx.cardview.widget.CardView>
@@ -185,5 +207,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_end="4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

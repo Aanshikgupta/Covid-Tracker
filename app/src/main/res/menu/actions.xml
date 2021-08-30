@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:id="@+id/helpline"
-        android:title="Helpline"
+    <item android:id="@+id/prevention"
+        android:title="Prevention"
         />
 
     <item android:id="@+id/info"
