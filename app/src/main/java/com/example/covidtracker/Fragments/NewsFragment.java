@@ -60,18 +60,6 @@ public class NewsFragment extends Fragment {
         pb.setVisibility(View.VISIBLE);
         pb.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.white)));
 
-//        swipeRefreshLayout.setOnRefreshListener(
-//                () -> {
-//
-//
-//
-//                    // This line is important as it explicitly
-//                    // refreshes only once
-//                    // If "true" it implicitly refreshes forever
-//                    swipeRefreshLayout.setRefreshing(false);
-//                    getNews();
-//                }
-//        );
 
 
 

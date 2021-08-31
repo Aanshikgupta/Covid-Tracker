@@ -2,6 +2,7 @@ package com.example.covidtracker;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     private GlobalApiHolder globalApiHolder;
     private PieChart pieChart;
     private ViewPager2 viewPager;
-    public static List<CountriesItem> countriesItems;
+    private static List<CountriesItem> countriesItems;
     private RecyclerView topFiveRecyclerView;
     private Button showCountries;
     private TextView activeCount, deathCount, recoveredCount, confirmedCount, activeInc, deathInc, recoveredInc, confirmedInc;
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         optionButton = findViewById(R.id.optionMenu);
 
         isNetworkConnectionAvailable();

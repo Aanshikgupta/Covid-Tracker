@@ -50,16 +50,14 @@
                      android:id="@+id/activeText"
                      android:layout_width="0dp"
                      android:layout_height="wrap_content"
-                     android:layout_marginStart="30dp"
                      android:layout_marginEnd="16dp"
                      android:layout_marginBottom="4dp"
                      android:gravity="end"
                      android:text="Active"
                      android:textAllCaps="true"
-                     android:textSize="12dp"
+                     android:textSize="12sp"
                      app:layout_constraintBottom_toTopOf="@+id/active"
                      app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintStart_toEndOf="@+id/activeImage"
                      app:layout_constraintTop_toBottomOf="@+id/activeInc"
                      app:layout_constraintVertical_bias="1.0" />
 
@@ -80,26 +78,22 @@
                      android:id="@+id/activeInc"
                      android:layout_width="wrap_content"
                      android:layout_height="0dp"
-                     android:layout_marginStart="4dp"
                      android:layout_marginTop="16dp"
                      android:layout_marginEnd="16dp"
                      android:text="0000"
                      android:textColor="@color/increase"
                      android:textSize="14sp"
                      app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintStart_toEndOf="@+id/activeIconInc"
                      app:layout_constraintTop_toTopOf="parent" />
 
                  <ImageView
                      android:id="@+id/activeIconInc"
                      android:layout_width="15dp"
                      android:layout_height="0dp"
-                     android:layout_marginStart="50dp"
                      android:layout_marginEnd="4dp"
                      app:layout_constraintBottom_toBottomOf="@+id/activeInc"
                      app:layout_constraintEnd_toStartOf="@+id/activeInc"
                      app:layout_constraintHorizontal_chainStyle="packed"
-                     app:layout_constraintStart_toEndOf="@+id/activeImage"
                      app:layout_constraintTop_toTopOf="@+id/activeInc"
                      app:srcCompat="@drawable/rise"
                      app:tint="@color/increase" />
@@ -140,16 +134,14 @@
                      android:id="@+id/textView"
                      android:layout_width="0dp"
                      android:layout_height="wrap_content"
-                     android:layout_marginStart="30dp"
                      android:layout_marginEnd="16dp"
                      android:layout_marginBottom="4dp"
                      android:gravity="end"
                      android:text="Confirmed"
                      android:textAllCaps="true"
-                     android:textSize="12dp"
+                     android:textSize="12sp"
                      app:layout_constraintBottom_toTopOf="@+id/confirmed"
                      app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintStart_toEndOf="@+id/imageView"
                      app:layout_constraintTop_toBottomOf="@+id/confirmedInc"
                      app:layout_constraintVertical_bias="1.0" />
 
@@ -169,27 +161,21 @@
                  <TextView
                      android:id="@+id/confirmedInc"
                      android:layout_width="wrap_content"
-                     android:layout_height="0dp"
-                     android:layout_marginStart="4dp"
+                     android:layout_height="wrap_content"
                      android:layout_marginTop="16dp"
                      android:layout_marginEnd="16dp"
                      android:text="0000"
                      android:textColor="@color/increase"
                      android:textSize="14sp"
                      app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintStart_toEndOf="@+id/imageView2"
                      app:layout_constraintTop_toTopOf="parent" />
 
                  <ImageView
                      android:id="@+id/imageView2"
                      android:layout_width="15dp"
                      android:layout_height="0dp"
-                     android:layout_marginStart="50dp"
-                     android:layout_marginEnd="4dp"
                      app:layout_constraintBottom_toBottomOf="@+id/confirmedInc"
                      app:layout_constraintEnd_toStartOf="@+id/confirmedInc"
-                     app:layout_constraintHorizontal_chainStyle="packed"
-                     app:layout_constraintStart_toEndOf="@+id/imageView"
                      app:layout_constraintTop_toTopOf="@+id/confirmedInc"
                      app:layout_constraintVertical_bias="0.0"
                      app:srcCompat="@drawable/rise"
@@ -232,7 +218,6 @@
                      android:id="@+id/recoveredTag"
                      android:layout_width="0dp"
                      android:layout_height="wrap_content"
-                     android:layout_marginStart="30dp"
                      android:layout_marginEnd="16dp"
                      android:layout_marginBottom="4dp"
                      android:gravity="end"
@@ -241,7 +226,6 @@
                      android:textSize="12sp"
                      app:layout_constraintBottom_toTopOf="@+id/recovered"
                      app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintStart_toEndOf="@+id/recoveredImage"
                      app:layout_constraintTop_toBottomOf="@+id/recoveredInc"
                      app:layout_constraintVertical_bias="1.0" />
 
@@ -262,25 +246,20 @@
                      android:id="@+id/recoveredInc"
                      android:layout_width="wrap_content"
                      android:layout_height="0dp"
-                     android:layout_marginStart="4dp"
                      android:layout_marginTop="16dp"
                      android:layout_marginEnd="16dp"
                      android:text="0000"
                      android:textColor="@color/increase"
                      android:textSize="14sp"
                      app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintHorizontal_bias="1.0"
-                     app:layout_constraintStart_toEndOf="@+id/recoveredIncIcon"
                      app:layout_constraintTop_toTopOf="parent" />
 
                  <ImageView
                      android:id="@+id/recoveredIncIcon"
                      android:layout_width="15dp"
                      android:layout_height="0dp"
-                     android:layout_marginStart="50dp"
                      app:layout_constraintBottom_toBottomOf="@+id/recoveredInc"
                      app:layout_constraintEnd_toStartOf="@+id/recoveredInc"
-                     app:layout_constraintStart_toEndOf="@+id/recoveredImage"
                      app:layout_constraintTop_toTopOf="@+id/recoveredInc"
                      app:layout_constraintVertical_bias="1.0"
                      app:srcCompat="@drawable/rise"
@@ -321,7 +300,6 @@
                      android:id="@+id/deathTag"
                      android:layout_width="0dp"
                      android:layout_height="wrap_content"
-                     android:layout_marginStart="30dp"
                      android:layout_marginEnd="16dp"
                      android:layout_marginBottom="4dp"
                      android:gravity="end"
@@ -330,8 +308,6 @@
                      android:textSize="12sp"
                      app:layout_constraintBottom_toTopOf="@+id/deaths"
                      app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintHorizontal_bias="0.0"
-                     app:layout_constraintStart_toEndOf="@+id/deathsImage"
                      app:layout_constraintTop_toBottomOf="@+id/deathIconInc"
                      app:layout_constraintVertical_bias="1.0" />
 
@@ -352,26 +328,21 @@
                      android:id="@+id/deathInc"
                      android:layout_width="wrap_content"
                      android:layout_height="0dp"
-                     android:layout_marginStart="4dp"
                      android:layout_marginTop="16dp"
                      android:layout_marginEnd="16dp"
                      android:text="0000"
                      android:textColor="@color/increase"
                      android:textSize="14sp"
                      app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintStart_toEndOf="@+id/deathIconInc"
                      app:layout_constraintTop_toTopOf="parent" />
 
                  <ImageView
                      android:id="@+id/deathIconInc"
                      android:layout_width="15dp"
                      android:layout_height="0dp"
-                     android:layout_marginStart="50dp"
-                     android:layout_marginEnd="4dp"
                      app:layout_constraintBottom_toBottomOf="@+id/deathInc"
                      app:layout_constraintEnd_toStartOf="@+id/deathInc"
                      app:layout_constraintHorizontal_chainStyle="packed"
-                     app:layout_constraintStart_toEndOf="@+id/deathsImage"
                      app:layout_constraintTop_toTopOf="@+id/deathInc"
                      app:srcCompat="@drawable/rise"
                      app:tint="@color/increase" />
@@ -424,7 +395,7 @@
 
                  <LinearLayout
                      android:layout_width="match_parent"
-                     android:layout_height="15dp"
+                     android:layout_height="wrap_content"
                      android:layout_gravity="center_vertical">
 
                      <!--View to display the yellow color icon-->
@@ -444,7 +415,7 @@
 
                  <LinearLayout
                      android:layout_width="match_parent"
-                     android:layout_height="15dp"
+                     android:layout_height="wrap_content"
                      android:layout_gravity="center_vertical"
                      android:layout_marginTop="5dp">
 
@@ -465,7 +436,7 @@
 
                  <LinearLayout
                      android:layout_width="match_parent"
-                     android:layout_height="15dp"
+                     android:layout_height="wrap_content"
                      android:layout_gravity="center_vertical"
                      android:layout_marginTop="5dp">
 
@@ -486,7 +457,7 @@
 
                  <LinearLayout
                      android:layout_width="match_parent"
-                     android:layout_height="15dp"
+                     android:layout_height="wrap_content"
                      android:layout_gravity="center_vertical"
                      android:layout_marginTop="5dp">
 

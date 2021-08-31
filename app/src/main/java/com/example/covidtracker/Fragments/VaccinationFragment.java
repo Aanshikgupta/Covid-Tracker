@@ -3,8 +3,11 @@ package com.example.covidtracker.Fragments;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,8 +20,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.covidtracker.Adapters.VaccineAdapter;
 import com.example.covidtracker.CovidModels.VaccineModels.Response;
 import com.example.covidtracker.CovidModels.VaccineModels.SessionsItem;
@@ -52,6 +57,7 @@ public class VaccinationFragment extends Fragment {
     private ProgressDialog pd;
     private TextView noData;
     private VaccineAdapter adapter;
+    private CardView register_vaccine_cardview;
 
     public VaccinationFragment() {
         // Required empty public constructor
@@ -69,10 +75,23 @@ public class VaccinationFragment extends Fragment {
         searchButton = view.findViewById(R.id.searchVaccinationBtn);
         pincodeET = view.findViewById(R.id.pincodeEditText);
         noData = view.findViewById(R.id.noData);
+        register_vaccine_cardview = view.findViewById(R.id.register_vaccine_cardView);
+
+        register_vaccine_cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://selfregistration.cowin.gov.in/"));
+                startActivity(intent);
+            }
+        });
         centresList = new ArrayList<>();
 
-        vaccinationRecyclerView.setVisibility(View.INVISIBLE);
+
         noData.setVisibility(View.INVISIBLE);
+
+        ImageView gifImg = view.findViewById(R.id.registerVaccineIV);
+        Glide.with(this).load(R.raw.register_vaccine).into(gifImg);
 
 
         adapter = new VaccineAdapter(centresList, getContext());
@@ -82,6 +101,13 @@ public class VaccinationFragment extends Fragment {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                pincode = pincodeET.getText().toString().trim();
+
+                if (pincode.length() == 0) {
+                    pincodeET.setError("Please enter valid pincode!");
+                    return;
+                }
 
                 pushSoftKeyBoardDown();
                 getDateDialog();
@@ -118,8 +144,7 @@ public class VaccinationFragment extends Fragment {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 dates.set(year, month, dayOfMonth);
                 date = dayOfMonth + "-" + (month + 1) + "-" + year;
-                pd.setMessage("Searching..." + date);
-                pd.show();
+
                 getAndSetData();
 
 
@@ -140,6 +165,9 @@ public class VaccinationFragment extends Fragment {
             return;
         }
 
+        pd.setMessage("Searching..." + date);
+        pd.show();
+
 
         retrofit = RetrofitClass.getInstance(BASE_URL);
         apiHolder = retrofit.create(VaccinationApiHolder.class);
@@ -157,24 +185,28 @@ public class VaccinationFragment extends Fragment {
 
                     if (centresList.size() != 0) {
                         vaccinationRecyclerView.setVisibility(View.VISIBLE);
-                        noData.setVisibility(View.INVISIBLE);
+                        noData.setVisibility(View.GONE);
                         adapter = new VaccineAdapter(centresList, getContext());
                         vaccinationRecyclerView.setAdapter(adapter);
 
                     } else {
                         noData.setVisibility(View.VISIBLE);
-                        vaccinationRecyclerView.setVisibility(View.INVISIBLE);
+                        vaccinationRecyclerView.setVisibility(View.GONE);
                     }
 
 
                 } else {
                     Log.i("MSG", "Error..." + response.toString() + "  " + BASE_URL);
+                    noData.setVisibility(View.VISIBLE);
+                    vaccinationRecyclerView.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
                 Log.i("MSG", t.getMessage() + " " + BASE_URL);
+                noData.setVisibility(View.VISIBLE);
+                vaccinationRecyclerView.setVisibility(View.GONE);
             }
         });
         adapter.notifyDataSetChanged();
