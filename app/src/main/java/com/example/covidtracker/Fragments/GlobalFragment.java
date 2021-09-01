@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,8 @@ import android.widget.TextView;
 
 import com.example.covidtracker.Adapters.TopFiveAdapter;
 import com.example.covidtracker.CountriesActivity;
-import com.example.covidtracker.CovidModels.GlobalModels.CountriesItem;
-import com.example.covidtracker.CovidModels.GlobalModels.Global;
-import com.example.covidtracker.CovidModels.GlobalModels.Response;
+import com.example.covidtracker.CovidModels.GlobalModels.GlobalData;
+import com.example.covidtracker.CovidModels.GlobalModels.ResponseItem;
 import com.example.covidtracker.Network.Global.GlobalApiHolder;
 import com.example.covidtracker.Network.RetrofitClass;
 import com.example.covidtracker.R;
@@ -34,6 +34,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 
@@ -44,7 +45,7 @@ public class GlobalFragment extends Fragment {
     private GlobalApiHolder globalApiHolder;
     private PieChart pieChart;
     private ViewPager2 viewPager;
-    public static List<CountriesItem> countriesItems;
+    public static List<ResponseItem> countriesItems;
     private RecyclerView topFiveRecyclerView;
     private Button showCountries;
     private TextView activeCount, deathCount, recoveredCount, confirmedCount, activeInc, deathInc, recoveredInc, confirmedInc;
@@ -54,28 +55,29 @@ public class GlobalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view= inflater.inflate(R.layout.fragment_global, container, false);
+        view = inflater.inflate(R.layout.fragment_global, container, false);
         setView(view);
         setButtonListener();
         getGlobalData();
-
-
 
 
         return view;
     }
 
     private void getGlobalData() {
-        retrofit = RetrofitClass.getInstance("https://api.covid19api.com/");
+        retrofit = RetrofitClass.getInstance("https://disease.sh/");
         globalApiHolder = retrofit.create(GlobalApiHolder.class);
-        Call<Response> responseCall = globalApiHolder.getResponse();
-        responseCall.enqueue(new Callback<Response>() {
+        Call<GlobalData> responseCall = globalApiHolder.getGlobal();
+
+        responseCall.enqueue(new Callback<GlobalData>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                assert response.body() != null;
-                Global global = response.body().getGlobal();
+            public void onResponse(Call<GlobalData> call, Response<GlobalData> response) {
+
+                GlobalData global = response.body();
+
+                Log.i("MSG", response.body().getCases() + "");
+
                 setGlobalData(global);
-                countriesItems=response.body().getCountries();
 
                 pieChart.addPieSlice(
                         new PieModel(
@@ -100,39 +102,76 @@ public class GlobalFragment extends Fragment {
                 pieChart.startAnimation();
 
 
-                List<CountriesItem> countriesItemList = new ArrayList<>();
-                countriesItemList = response.body().getCountries();
-                Collections.sort(countriesItemList, new Comparator<CountriesItem>() {
-                    @Override
-                    public int compare(CountriesItem o1, CountriesItem o2) {
-                        return Math.abs(Integer.parseInt(o2.getTotalConfirmed())-Integer.parseInt(o2.getTotalDeaths())-Integer.parseInt(o2.getTotalRecovered())) - Math.abs(Integer.parseInt(o1.getTotalConfirmed())-Integer.parseInt(o1.getTotalDeaths())-Integer.parseInt(o1.getTotalRecovered()));
-                    }
-                });
-                List<CountriesItem> topFive = new ArrayList<>();
-                topFive = countriesItemList.subList(0, 5);
-                TopFiveAdapter adapter = new TopFiveAdapter(getContext(), topFive);
-                topFiveRecyclerView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+                setCountriesList();
+
+
+//                List<CountriesItem> countriesItemList = new ArrayList<>();
+//                countriesItemList = response.body().getCountries();
 
 
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<GlobalData> call, Throwable t) {
+                Log.i("MSG", t.toString() + "");
 
             }
         });
+
+
     }
 
-    private void setGlobalData(Global global) {
-        deathCount.setText(global.getTotalDeaths());
-        confirmedCount.setText(global.getTotalConfirmed());
-        recoveredCount.setText(global.getTotalRecovered());
-        activeCount.setText("" + Math.abs((Integer.parseInt(global.getTotalConfirmed()) - Integer.parseInt(global.getTotalRecovered()) - Integer.parseInt(global.getTotalDeaths()))));
-        deathInc.setText(global.getNewDeaths());
-        activeInc.setText("" + Math.abs((Integer.parseInt(global.getNewConfirmed()) - Integer.parseInt(global.getNewRecovered()) - Integer.parseInt(global.getNewDeaths()))));
-        confirmedInc.setText(global.getNewConfirmed());
-        recoveredInc.setText(global.getNewRecovered());
+    private void setCountriesList() {
+
+        retrofit = RetrofitClass.getInstance("https://disease.sh/");
+        globalApiHolder = retrofit.create(GlobalApiHolder.class);
+        Call<List<ResponseItem>> responseCall = globalApiHolder.getResponse();
+
+        responseCall.enqueue(new Callback<List<ResponseItem>>() {
+            @Override
+            public void onResponse(Call<List<ResponseItem>> call, Response<List<ResponseItem>> response) {
+
+                assert response.body() != null;
+                countriesItems = response.body();
+
+                Log.i("HERE", countriesItems + "");
+                for (ResponseItem item : countriesItems) {
+                    Log.i("MSG", item.getCountry());
+                }
+
+                Collections.sort(countriesItems, new Comparator<ResponseItem>() {
+                    @Override
+                    public int compare(ResponseItem o1, ResponseItem o2) {
+                        return o2.getActive() - o1.getActive();
+                    }
+                });
+                List<ResponseItem> topFive = new ArrayList<>();
+
+                topFive = countriesItems.subList(0, 5);
+                TopFiveAdapter adapter = new TopFiveAdapter(getContext(), topFive);
+                topFiveRecyclerView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<ResponseItem>> call, Throwable t) {
+                Log.i("HERE", t.getMessage());
+            }
+
+        });
+
+
+    }
+
+    private void setGlobalData(GlobalData global) {
+        deathCount.setText(global.getDeaths() + "");
+        confirmedCount.setText("" + (Integer.valueOf(global.getCases())));
+        recoveredCount.setText(global.getRecovered() + "");
+        activeCount.setText("" + global.getActive());
+        deathInc.setText(global.getTodayDeaths() + "");
+        activeInc.setText("" + global.getTodayCases());
+        confirmedInc.setText("" + (Integer.valueOf(global.getTodayCases())));
+        recoveredInc.setText("" + global.getTodayRecovered());
     }
 
 
@@ -140,7 +179,7 @@ public class GlobalFragment extends Fragment {
         showCountries.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(), CountriesActivity.class);
+                Intent intent = new Intent(getContext(), CountriesActivity.class);
                 getContext().startActivity(intent);
             }
         });
@@ -160,6 +199,6 @@ public class GlobalFragment extends Fragment {
         topFiveRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         pieChart = view.findViewById(R.id.piechart);
         showCountries = view.findViewById(R.id.showCountries);
-        countriesItems=new ArrayList<>();
+        countriesItems = new ArrayList<>();
     }
 }

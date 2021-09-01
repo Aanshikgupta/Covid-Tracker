@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covidtracker.CovidModels.GlobalModels.CountriesItem;
+import com.example.covidtracker.CovidModels.GlobalModels.ResponseItem;
 import com.example.covidtracker.R;
 
 import java.util.List;
@@ -17,9 +17,9 @@ import java.util.List;
 public class TopFiveAdapter extends RecyclerView.Adapter<TopFiveAdapter.TopFiveViewHolder> {
 
     Context context;
-    List<CountriesItem> countriesItemList;
+    List<ResponseItem> countriesItemList;
 
-    public TopFiveAdapter(Context context, List<CountriesItem> countriesItemList) {
+    public TopFiveAdapter(Context context, List<ResponseItem> countriesItemList) {
         this.context = context;
         this.countriesItemList = countriesItemList;
     }
@@ -33,11 +33,11 @@ public class TopFiveAdapter extends RecyclerView.Adapter<TopFiveAdapter.TopFiveV
 
     @Override
     public void onBindViewHolder(@NonNull  TopFiveAdapter.TopFiveViewHolder holder, int position) {
-        CountriesItem item=countriesItemList.get(position);
-        holder.countryItem.setText(item.getCountry());
-        holder.activeItem.setText(""+Math.abs(Integer.parseInt(item.getTotalConfirmed())-Integer.parseInt(item.getTotalRecovered())-Integer.parseInt(item.getTotalDeaths())));
-        holder.recoveredItem.setText((item.getTotalRecovered()));
-        holder.deathItem.setText(item.getTotalDeaths());
+        ResponseItem item=countriesItemList.get(position);
+        holder.countryItem.setText(""+item.getCountry());
+        holder.activeItem.setText(""+item.getCases());
+        holder.recoveredItem.setText(""+item.getRecovered());
+        holder.deathItem.setText(""+item.getDeaths());
     }
 
     @Override

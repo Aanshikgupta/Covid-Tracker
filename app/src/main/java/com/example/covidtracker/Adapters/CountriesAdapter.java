@@ -9,20 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covidtracker.CovidModels.GlobalModels.CountriesItem;
+import com.example.covidtracker.CovidModels.GlobalModels.ResponseItem;
 import com.example.covidtracker.R;
 
 import java.util.List;
 
 public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.CountryHolder> {
 
-    public CountriesAdapter(Context context, List<CountriesItem> countriesItems) {
+    public CountriesAdapter(Context context, List<ResponseItem> countriesItems) {
         this.context = context;
         this.countriesItems = countriesItems;
     }
 
     Context context;
-    List<CountriesItem> countriesItems;
+    List<ResponseItem> countriesItems;
 
 
     @NonNull
@@ -35,20 +35,20 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.Coun
 
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull CountriesAdapter.CountryHolder holder, int position) {
-        CountriesItem countriesItem=countriesItems.get(position);
+        ResponseItem countriesItem=countriesItems.get(position);
 
-        long confirmedCases=Long.parseLong(countriesItem.getTotalConfirmed());
-        long confirmedCasesInc=Long.parseLong(countriesItem.getNewConfirmed());
+        long confirmedCases=countriesItem.getCases();
+        long confirmedCasesInc=countriesItem.getTodayCases();
 
-        long recoveredCases=Long.parseLong(countriesItem.getTotalRecovered());
-        long recoveredCasesInc=Long.parseLong(countriesItem.getNewRecovered());
+        long recoveredCases=countriesItem.getRecovered();
+        long recoveredCasesInc=countriesItem.getTodayRecovered();
 
-        long deathCases=Long.parseLong(countriesItem.getTotalDeaths());
-        long deathCasesInc=Long.parseLong(countriesItem.getNewDeaths());
+        long deathCases=countriesItem.getDeaths();
+        long deathCasesInc=countriesItem.getTodayDeaths();
 
 
-        holder.active.setText(""+Math.abs(confirmedCases-recoveredCases-deathCases));
-        holder.activeInc.setText(""+Math.abs(confirmedCasesInc-recoveredCasesInc-deathCasesInc));
+        holder.active.setText(""+countriesItem.getActive());
+        holder.activeInc.setText(""+(countriesItem.getTodayCases()-countriesItem.getTodayRecovered()-countriesItem.getTodayDeaths()));
 
         holder.deaths.setText(""+deathCases);
         holder.deathInc.setText(""+deathCasesInc);

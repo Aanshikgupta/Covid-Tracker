@@ -14,7 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.covidtracker.Adapters.CountriesAdapter;
-import com.example.covidtracker.CovidModels.GlobalModels.CountriesItem;
+import com.example.covidtracker.CovidModels.GlobalModels.ResponseItem;
 import com.example.covidtracker.Fragments.GlobalFragment;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class CountriesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_countries);
         isNetworkConnectionAvailable();
-        List<CountriesItem> countries = new ArrayList<CountriesItem>();
+        List<ResponseItem> countries = new ArrayList<>();
         countries= GlobalFragment.countriesItems;
         countriesRecyclerView=findViewById(R.id.countriesRecyclerView);
         countriesRecyclerView.setHasFixedSize(true);

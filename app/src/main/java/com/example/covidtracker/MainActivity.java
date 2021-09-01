@@ -22,13 +22,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.covidtracker.Adapters.FragmentAdapter;
-import com.example.covidtracker.CovidModels.GlobalModels.CountriesItem;
 import com.example.covidtracker.Network.Global.GlobalApiHolder;
 import com.google.android.material.tabs.TabLayout;
 
 import org.eazegraph.lib.charts.PieChart;
 
-import java.util.List;
 
 import retrofit2.Retrofit;
 
@@ -38,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     private GlobalApiHolder globalApiHolder;
     private PieChart pieChart;
     private ViewPager2 viewPager;
-    private static List<CountriesItem> countriesItems;
     private RecyclerView topFiveRecyclerView;
     private Button showCountries;
     private TextView activeCount, deathCount, recoveredCount, confirmedCount, activeInc, deathInc, recoveredInc, confirmedInc;

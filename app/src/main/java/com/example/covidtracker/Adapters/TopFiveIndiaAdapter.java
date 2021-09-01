@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covidtracker.CovidModels.GlobalModels.CountriesItem;
 import com.example.covidtracker.CovidModels.IndiaModels.RegionalItem;
 import com.example.covidtracker.R;
 

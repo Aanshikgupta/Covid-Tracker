@@ -15,16 +15,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.covidtracker.Adapters.TopFiveAdapter;
 import com.example.covidtracker.Adapters.TopFiveIndiaAdapter;
-import com.example.covidtracker.CountriesActivity;
-import com.example.covidtracker.CovidModels.GlobalModels.CountriesItem;
-import com.example.covidtracker.CovidModels.GlobalModels.Global;
 import com.example.covidtracker.CovidModels.IndiaModels.Data;
 import com.example.covidtracker.CovidModels.IndiaModels.India;
 import com.example.covidtracker.CovidModels.IndiaModels.RegionalItem;
 import com.example.covidtracker.CovidModels.IndiaModels.Summary;
-import com.example.covidtracker.Network.Global.GlobalApiHolder;
 import com.example.covidtracker.Network.India.IndiaApiHolder;
 import com.example.covidtracker.Network.RetrofitClass;
 import com.example.covidtracker.R;
