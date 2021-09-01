@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTracker">
         <activity
-            android:name=".PreventionActivity"
+            android:name=".OptionsActivity"
             android:exported="true"
             android:screenOrientation="portrait">
 

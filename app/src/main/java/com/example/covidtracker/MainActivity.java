@@ -8,20 +8,16 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.app.Notification;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.SyncStateContract;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -60,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         isNetworkConnectionAvailable();
 
 
-
         setTabs();
 
 
@@ -73,8 +68,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     }
 
-    public void checkNetworkConnection(){
-        AlertDialog.Builder builder =new AlertDialog.Builder(this);
+    public void checkNetworkConnection() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("No internet Connection");
         builder.setMessage("Please turn on internet connection to continue");
         builder.setPositiveButton("Try again", new DialogInterface.OnClickListener() {
@@ -96,33 +91,29 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         alertDialog.show();
     }
 
-    public boolean isNetworkConnectionAvailable(){
+    public boolean isNetworkConnectionAvailable() {
         ConnectivityManager cm =
-                (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         boolean isConnected = activeNetwork != null &&
                 activeNetwork.isConnected();
-        if(isConnected) {
+        if (isConnected) {
             Log.d("Network", "Connected");
             return true;
-        }
-        else{
+        } else {
             checkNetworkConnection();
-            Log.d("Network","Not Connected");
+            Log.d("Network", "Not Connected");
             return false;
         }
     }
 
     public void showMenu(View v) {
-
         PopupMenu popup = new PopupMenu(this, v);
         popup.setOnMenuItemClickListener(MainActivity.this);
         popup.inflate(R.menu.actions);
         popup.show();
     }
-
-
 
 
     private void setTabs() {
@@ -176,14 +167,27 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     @Override
     public boolean onMenuItemClick(MenuItem item) {
 
-        switch (item.getItemId()){
+        Intent i;
+        switch (item.getItemId()) {
             case R.id.prevention:
-                startActivity(new Intent(MainActivity.this,PreventionActivity.class));
+                i = new Intent(MainActivity.this, OptionsActivity.class);
+                i.putExtra("menuOptionSelected", 0);
+                startActivity(i);
                 return true;
+            case R.id.symptoms:
+                i = new Intent(MainActivity.this, OptionsActivity.class);
+                i.putExtra("menuOptionSelected", 1);
+                startActivity(i);
+                return true;
+            case R.id.helpline:
+                i = new Intent(MainActivity.this, OptionsActivity.class);
+                i.putExtra("menuOptionSelected", 2);
+                startActivity(i);
+                return true;
+
             default:
                 return false;
         }
-
 
 
     }

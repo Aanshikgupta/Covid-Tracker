@@ -1,616 +1,617 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.GlobalFragment">
- <androidx.constraintlayout.widget.ConstraintLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent">
-
-     <androidx.constraintlayout.widget.ConstraintLayout
-         android:id="@+id/constraintLayout"
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="parent">
-
-         <androidx.cardview.widget.CardView
-             android:id="@+id/cardView2"
-             android:layout_width="0dp"
-             android:layout_height="150dp"
-             android:layout_marginStart="4dp"
-             android:layout_marginTop="16dp"
-             android:layout_marginEnd="14dp"
-             android:elevation="10dp"
-             app:cardCornerRadius="12dp"
-             app:layout_constraintBottom_toBottomOf="@+id/cardView"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toEndOf="@+id/cardView"
-             app:layout_constraintTop_toTopOf="parent">
-
-             <androidx.constraintlayout.widget.ConstraintLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent">
-
-                 <ImageView
-                     android:id="@+id/activeImage"
-                     android:layout_width="45dp"
-                     android:layout_height="45dp"
-                     android:layout_marginStart="16dp"
-                     android:layout_marginTop="16dp"
-                     app:layout_constraintStart_toStartOf="parent"
-                     app:layout_constraintTop_toTopOf="parent"
-                     app:srcCompat="@drawable/ic_active"
-                     app:tint="@color/active" />
-
-                 <TextView
-                     android:id="@+id/activeText"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_marginEnd="16dp"
-                     android:layout_marginBottom="4dp"
-                     android:gravity="end"
-                     android:text="Active"
-                     android:textAllCaps="true"
-                     android:textSize="12sp"
-                     app:layout_constraintBottom_toTopOf="@+id/active"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/activeInc"
-                     app:layout_constraintVertical_bias="1.0" />
-
-                 <TextView
-                     android:id="@+id/active"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_marginEnd="16dp"
-                     android:layout_marginBottom="16dp"
-                     android:gravity="end"
-                     android:text="0000000000"
-                     android:textColor="@color/active"
-                     android:textSize="18sp"
-                     app:layout_constraintBottom_toBottomOf="parent"
-                     app:layout_constraintEnd_toEndOf="parent" />
-
-                 <TextView
-                     android:id="@+id/activeInc"
-                     android:layout_width="wrap_content"
-                     android:layout_height="0dp"
-                     android:layout_marginTop="16dp"
-                     android:layout_marginEnd="16dp"
-                     android:text="0000"
-                     android:textColor="@color/increase"
-                     android:textSize="14sp"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintTop_toTopOf="parent" />
-
-                 <ImageView
-                     android:id="@+id/activeIconInc"
-                     android:layout_width="15dp"
-                     android:layout_height="0dp"
-                     android:layout_marginEnd="4dp"
-                     app:layout_constraintBottom_toBottomOf="@+id/activeInc"
-                     app:layout_constraintEnd_toStartOf="@+id/activeInc"
-                     app:layout_constraintHorizontal_chainStyle="packed"
-                     app:layout_constraintTop_toTopOf="@+id/activeInc"
-                     app:srcCompat="@drawable/rise"
-                     app:tint="@color/increase" />
-             </androidx.constraintlayout.widget.ConstraintLayout>
-
-         </androidx.cardview.widget.CardView>
-
-         <androidx.cardview.widget.CardView
-             android:id="@+id/cardView"
-             android:layout_width="0dp"
-             android:layout_height="150dp"
-             android:layout_marginStart="14dp"
-             android:layout_marginTop="16dp"
-             android:layout_marginEnd="4dp"
-             android:elevation="10dp"
-             app:cardCornerRadius="12dp"
-             app:layout_constraintEnd_toStartOf="@+id/cardView2"
-             app:layout_constraintHorizontal_chainStyle="packed"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toTopOf="parent">
-
-             <androidx.constraintlayout.widget.ConstraintLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent">
-
-                 <ImageView
-                     android:id="@+id/imageView"
-                     android:layout_width="45dp"
-                     android:layout_height="45dp"
-                     android:layout_marginStart="16dp"
-                     android:layout_marginTop="16dp"
-                     app:layout_constraintStart_toStartOf="parent"
-                     app:layout_constraintTop_toTopOf="parent"
-                     app:srcCompat="@drawable/ic_confirmed"
-                     app:tint="@color/confirmed" />
-
-                 <TextView
-                     android:id="@+id/textView"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_marginEnd="16dp"
-                     android:layout_marginBottom="4dp"
-                     android:gravity="end"
-                     android:text="Confirmed"
-                     android:textAllCaps="true"
-                     android:textSize="12sp"
-                     app:layout_constraintBottom_toTopOf="@+id/confirmed"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/confirmedInc"
-                     app:layout_constraintVertical_bias="1.0" />
-
-                 <TextView
-                     android:id="@+id/confirmed"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_marginEnd="16dp"
-                     android:layout_marginBottom="16dp"
-                     android:gravity="end"
-                     android:text="0000000000"
-                     android:textColor="@color/confirmed"
-                     android:textSize="18sp"
-                     app:layout_constraintBottom_toBottomOf="parent"
-                     app:layout_constraintEnd_toEndOf="parent" />
-
-                 <TextView
-                     android:id="@+id/confirmedInc"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_marginTop="16dp"
-                     android:layout_marginEnd="16dp"
-                     android:text="0000"
-                     android:textColor="@color/increase"
-                     android:textSize="14sp"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintTop_toTopOf="parent" />
-
-                 <ImageView
-                     android:id="@+id/imageView2"
-                     android:layout_width="15dp"
-                     android:layout_height="0dp"
-                     app:layout_constraintBottom_toBottomOf="@+id/confirmedInc"
-                     app:layout_constraintEnd_toStartOf="@+id/confirmedInc"
-                     app:layout_constraintTop_toTopOf="@+id/confirmedInc"
-                     app:layout_constraintVertical_bias="0.0"
-                     app:srcCompat="@drawable/rise"
-                     app:tint="@color/increase" />
-             </androidx.constraintlayout.widget.ConstraintLayout>
-
-         </androidx.cardview.widget.CardView>
-
-         <androidx.cardview.widget.CardView
-             android:id="@+id/cardView3"
-             android:layout_width="0dp"
-             android:layout_height="150dp"
-             android:layout_marginStart="14dp"
-             android:layout_marginTop="8dp"
-             android:layout_marginEnd="4dp"
-             android:layout_marginBottom="16dp"
-             android:elevation="10dp"
-             app:cardCornerRadius="12dp"
-             app:layout_constraintBottom_toBottomOf="parent"
-             app:layout_constraintEnd_toStartOf="@+id/cardView4"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-             <androidx.constraintlayout.widget.ConstraintLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent">
-
-                 <ImageView
-                     android:id="@+id/recoveredImage"
-                     android:layout_width="45dp"
-                     android:layout_height="45dp"
-                     android:layout_marginStart="16dp"
-                     android:layout_marginTop="16dp"
-                     app:layout_constraintStart_toStartOf="parent"
-                     app:layout_constraintTop_toTopOf="parent"
-                     app:srcCompat="@drawable/ic_recovered"
-                     app:tint="@color/recovered" />
-
-                 <TextView
-                     android:id="@+id/recoveredTag"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_marginEnd="16dp"
-                     android:layout_marginBottom="4dp"
-                     android:gravity="end"
-                     android:text="Recovered"
-                     android:textAllCaps="true"
-                     android:textSize="12sp"
-                     app:layout_constraintBottom_toTopOf="@+id/recovered"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/recoveredInc"
-                     app:layout_constraintVertical_bias="1.0" />
-
-                 <TextView
-                     android:id="@+id/recovered"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_marginEnd="16dp"
-                     android:layout_marginBottom="16dp"
-                     android:gravity="end"
-                     android:text="0000000000"
-                     android:textColor="@color/recovered"
-                     android:textSize="18sp"
-                     app:layout_constraintBottom_toBottomOf="parent"
-                     app:layout_constraintEnd_toEndOf="parent" />
-
-                 <TextView
-                     android:id="@+id/recoveredInc"
-                     android:layout_width="wrap_content"
-                     android:layout_height="0dp"
-                     android:layout_marginTop="16dp"
-                     android:layout_marginEnd="16dp"
-                     android:text="0000"
-                     android:textColor="@color/increase"
-                     android:textSize="14sp"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintTop_toTopOf="parent" />
-
-                 <ImageView
-                     android:id="@+id/recoveredIncIcon"
-                     android:layout_width="15dp"
-                     android:layout_height="0dp"
-                     app:layout_constraintBottom_toBottomOf="@+id/recoveredInc"
-                     app:layout_constraintEnd_toStartOf="@+id/recoveredInc"
-                     app:layout_constraintTop_toTopOf="@+id/recoveredInc"
-                     app:layout_constraintVertical_bias="1.0"
-                     app:srcCompat="@drawable/rise"
-                     app:tint="@color/increase" />
-             </androidx.constraintlayout.widget.ConstraintLayout>
-
-         </androidx.cardview.widget.CardView>
-
-         <androidx.cardview.widget.CardView
-             android:id="@+id/cardView4"
-             android:layout_width="0dp"
-             android:layout_height="150dp"
-             android:layout_marginStart="4dp"
-             android:layout_marginEnd="14dp"
-             android:elevation="10dp"
-             app:cardCornerRadius="12dp"
-             app:layout_constraintBottom_toBottomOf="@+id/cardView3"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toEndOf="@+id/cardView3"
-             app:layout_constraintTop_toTopOf="@+id/cardView3">
-
-             <androidx.constraintlayout.widget.ConstraintLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent">
-
-                 <ImageView
-                     android:id="@+id/deathsImage"
-                     android:layout_width="45dp"
-                     android:layout_height="45dp"
-                     android:layout_marginStart="16dp"
-                     android:layout_marginTop="16dp"
-                     app:layout_constraintStart_toStartOf="parent"
-                     app:layout_constraintTop_toTopOf="parent"
-                     app:srcCompat="@drawable/ic_deaths"
-                     app:tint="@color/deaths" />
-
-                 <TextView
-                     android:id="@+id/deathTag"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_marginEnd="16dp"
-                     android:layout_marginBottom="4dp"
-                     android:gravity="end"
-                     android:text="Deaths"
-                     android:textAllCaps="true"
-                     android:textSize="12sp"
-                     app:layout_constraintBottom_toTopOf="@+id/deaths"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/deathIconInc"
-                     app:layout_constraintVertical_bias="1.0" />
-
-                 <TextView
-                     android:id="@+id/deaths"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_marginEnd="16dp"
-                     android:layout_marginBottom="16dp"
-                     android:gravity="end"
-                     android:text="0000000000"
-                     android:textColor="@color/deaths"
-                     android:textSize="18sp"
-                     app:layout_constraintBottom_toBottomOf="parent"
-                     app:layout_constraintEnd_toEndOf="parent" />
-
-                 <TextView
-                     android:id="@+id/deathInc"
-                     android:layout_width="wrap_content"
-                     android:layout_height="0dp"
-                     android:layout_marginTop="16dp"
-                     android:layout_marginEnd="16dp"
-                     android:text="0000"
-                     android:textColor="@color/increase"
-                     android:textSize="14sp"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintTop_toTopOf="parent" />
-
-                 <ImageView
-                     android:id="@+id/deathIconInc"
-                     android:layout_width="15dp"
-                     android:layout_height="0dp"
-                     app:layout_constraintBottom_toBottomOf="@+id/deathInc"
-                     app:layout_constraintEnd_toStartOf="@+id/deathInc"
-                     app:layout_constraintHorizontal_chainStyle="packed"
-                     app:layout_constraintTop_toTopOf="@+id/deathInc"
-                     app:srcCompat="@drawable/rise"
-                     app:tint="@color/increase" />
-             </androidx.constraintlayout.widget.ConstraintLayout>
-
-         </androidx.cardview.widget.CardView>
-
-     </androidx.constraintlayout.widget.ConstraintLayout>
-
-     <androidx.cardview.widget.CardView
-         android:id="@+id/graphCard"
-         android:layout_width="0dp"
-         android:layout_height="200dp"
-         android:layout_marginStart="16dp"
-         android:layout_marginEnd="16dp"
-         app:cardCornerRadius="12dp"
-         app:cardElevation="8dp"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-
-         <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="horizontal"
-             android:weightSum="2">
-
-
-             <org.eazegraph.lib.charts.PieChart xmlns:app="http://schemas.android.com/apk/res-auto"
-                 android:id="@+id/piechart"
-                 android:layout_width="wrap_content"
-                 android:layout_height="match_parent"
-                 android:layout_marginLeft="15dp"
-                 android:layout_marginTop="15dp"
-                 android:layout_marginBottom="15dp"
-                 android:layout_weight="1"
-                 android:padding="6dp"
-
-                 />
-
-             <LinearLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:layout_marginLeft="20dp"
-                 android:layout_weight="1"
-                 android:gravity="center_vertical"
-                 android:orientation="vertical"
-                 android:paddingLeft="15dp">
-
-                 <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_gravity="center_vertical">
-
-                     <!--View to display the yellow color icon-->
-                     <View
-                         android:layout_width="15dp"
-                         android:layout_height="match_parent"
-                         android:background="@color/confirmed" />
-
-                     <!--Text view to display R -->
-                     <TextView
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:paddingLeft="10dp"
-                         android:text="Confirmed" />
-
-                 </LinearLayout>
-
-                 <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_gravity="center_vertical"
-                     android:layout_marginTop="5dp">
-
-                     <!--View to display the green color icon-->
-                     <View
-                         android:layout_width="15dp"
-                         android:layout_height="match_parent"
-                         android:background="@color/active" />
-
-                     <!--Text view to display python text -->
-                     <TextView
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:paddingLeft="10dp"
-                         android:text="Active" />
-
-                 </LinearLayout>
-
-                 <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_gravity="center_vertical"
-                     android:layout_marginTop="5dp">
-
-                     <!--View to display the red color icon-->
-                     <View
-                         android:layout_width="15dp"
-                         android:layout_height="match_parent"
-                         android:background="@color/recovered" />
-
-                     <!--Text view to display C++ text -->
-                     <TextView
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:paddingLeft="10dp"
-                         android:text="Recovered" />
-
-                 </LinearLayout>
-
-                 <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_gravity="center_vertical"
-                     android:layout_marginTop="5dp">
-
-                     <!--View to display the blue color icon-->
-                     <View
-                         android:layout_width="15dp"
-                         android:layout_height="match_parent"
-                         android:background="@color/deaths" />
-
-                     <!--Text view to display Java text -->
-                     <TextView
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:paddingLeft="10dp"
-                         android:text="Deaths" />
-
-                 </LinearLayout>
-
-             </LinearLayout>
-
-
-         </LinearLayout>
-
-     </androidx.cardview.widget.CardView>
-
-
-     <TextView
-         android:id="@+id/countriesAffectedText"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginStart="16dp"
-         android:layout_marginTop="10dp"
-         android:text="Countries affected by coronavirus"
-         android:textColor="@color/main_text"
-         android:textSize="18sp"
-         android:textStyle="bold"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@id/graphCard" />
-
-     <androidx.cardview.widget.CardView
-         android:id="@+id/top5"
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         android:layout_marginStart="16dp"
-         android:layout_marginTop="10dp"
-         android:layout_marginEnd="16dp"
-         app:cardCornerRadius="12dp"
-         app:cardElevation="8dp"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintHorizontal_bias="0.0"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/countriesAffectedText">
-
-
-         <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="vertical"
-             android:padding="2dp">
-
-             <TextView
-                 android:id="@+id/textView2"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:padding="4dp"
-                 android:text="Global Top 5"
-                 android:textColor="@color/main_text"
-                 android:textSize="20sp"
-                 android:textStyle="bold" />
-
-             <View
-                 android:id="@+id/view"
-                 android:layout_width="match_parent"
-                 android:layout_height="1dp"
-                 android:background="@color/main_text" />
-
-             <LinearLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:layout_marginTop="5dp"
-                 android:orientation="horizontal"
-                 android:padding="3dp">
-
-                 <TextView
-                     android:id="@+id/textView3"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_weight="1"
-                     android:gravity="left"
-                     android:text="Country"
-                     android:textColor="@color/main_text"
-                     android:textSize="18sp" />
-
-                 <TextView
-                     android:id="@+id/textView6"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_weight="1"
-                     android:gravity="center"
-                     android:text="A"
-                     android:textColor="@color/active"
-                     android:textSize="18sp" />
-
-                 <TextView
-                     android:id="@+id/textView4"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_weight="1"
-                     android:gravity="center"
-                     android:text="R"
-                     android:textColor="@color/recovered"
-                     android:textSize="18sp" />
-
-                 <TextView
-                     android:id="@+id/textView5"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_weight="1"
-                     android:gravity="center"
-                     android:text="D"
-                     android:textColor="@color/deaths"
-                     android:textSize="18sp" />
-             </LinearLayout>
-
-             <View
-                 android:layout_width="match_parent"
-                 android:layout_height="1dp"
-                 android:background="@color/main_text" />
-
-             <androidx.recyclerview.widget.RecyclerView
-                 android:id="@+id/topFiveGlobalRecyclerView"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent" />
-         </LinearLayout>
-     </androidx.cardview.widget.CardView>
-
-     <androidx.appcompat.widget.AppCompatButton
-         android:id="@+id/showCountries"
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         android:layout_marginStart="16dp"
-         android:layout_marginTop="15dp"
-         android:layout_marginEnd="16dp"
-         android:layout_marginBottom="10dp"
-         android:background="@color/main_background"
-         android:elevation="10dp"
-         android:text="Show all countries"
-         android:textColor="#FFFFFF"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@id/top5" />
-
- </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="14dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/activeImage"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_active"
+                        app:tint="@color/active" />
+
+                    <TextView
+                        android:id="@+id/activeText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="end"
+                        android:text="Active"
+                        android:textAllCaps="true"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/active"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/activeInc"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/active"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="end"
+                        android:text="0000000000"
+                        android:textColor="@color/active"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/activeInc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="0000"
+                        android:textColor="@color/increase"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/activeIconInc"
+                        android:layout_width="15dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="4dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/activeInc"
+                        app:layout_constraintEnd_toStartOf="@+id/activeInc"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintTop_toTopOf="@+id/activeInc"
+                        app:srcCompat="@drawable/rise"
+                        app:tint="@color/increase" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/cardView2"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_confirmed"
+                        app:tint="@color/confirmed" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="end"
+                        android:text="Confirmed"
+                        android:textAllCaps="true"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/confirmed"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/confirmedInc"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/confirmed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="end"
+                        android:text="0000000000"
+                        android:textColor="@color/confirmed"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/confirmedInc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="0000"
+                        android:textColor="@color/increase"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="15dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/confirmedInc"
+                        app:layout_constraintEnd_toStartOf="@+id/confirmedInc"
+                        app:layout_constraintTop_toTopOf="@+id/confirmedInc"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/rise"
+                        app:tint="@color/increase" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardView4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/recoveredImage"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_recovered"
+                        app:tint="@color/recovered" />
+
+                    <TextView
+                        android:id="@+id/recoveredTag"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="end"
+                        android:text="Recovered"
+                        android:textAllCaps="true"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/recovered"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recoveredInc"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/recovered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="end"
+                        android:text="0000000000"
+                        android:textColor="@color/recovered"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/recoveredInc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="0000"
+                        android:textColor="@color/increase"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/recoveredIncIcon"
+                        android:layout_width="15dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/recoveredInc"
+                        app:layout_constraintEnd_toStartOf="@+id/recoveredInc"
+                        app:layout_constraintTop_toTopOf="@+id/recoveredInc"
+                        app:layout_constraintVertical_bias="1.0"
+                        app:srcCompat="@drawable/rise"
+                        app:tint="@color/increase" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="14dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardView3"
+                app:layout_constraintTop_toTopOf="@+id/cardView3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/deathsImage"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_deaths"
+                        app:tint="@color/deaths" />
+
+                    <TextView
+                        android:id="@+id/deathTag"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="end"
+                        android:text="Deaths"
+                        android:textAllCaps="true"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/deaths"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/deathIconInc"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/deaths"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="end"
+                        android:text="0000000000"
+                        android:textColor="@color/deaths"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/deathInc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="0000"
+                        android:textColor="@color/increase"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/deathIconInc"
+                        android:layout_width="15dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/deathInc"
+                        app:layout_constraintEnd_toStartOf="@+id/deathInc"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintTop_toTopOf="@+id/deathInc"
+                        app:srcCompat="@drawable/rise"
+                        app:tint="@color/increase" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/graphCard"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <org.eazegraph.lib.charts.PieChart xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/piechart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical">
+
+                        <!--View to display the yellow color icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/confirmed" />
+
+                        <!--Text view to display R -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Confirmed" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp">
+
+                        <!--View to display the green color icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/active" />
+
+                        <!--Text view to display python text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Active" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp">
+
+                        <!--View to display the red color icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/recovered" />
+
+                        <!--Text view to display C++ text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Recovered" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp">
+
+                        <!--View to display the blue color icon-->
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/deaths" />
+
+                        <!--Text view to display Java text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Deaths" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/countriesAffectedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="Countries affected by coronavirus"
+            android:textColor="@color/main_text"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/graphCard" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/top5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/countriesAffectedText">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="Global Top 5"
+                    android:textColor="@color/main_text"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/main_text" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="Country"
+                        android:textColor="@color/main_text"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textColor="@color/active"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="R"
+                        android:textColor="@color/recovered"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="D"
+                        android:textColor="@color/deaths"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/main_text" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/topFiveGlobalRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/showCountries"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/main_background"
+            android:elevation="10dp"
+            android:text="Show all countries"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

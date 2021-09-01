@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.SymptomsFragment">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:padding="15dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/dry_cough"
+        app:lottie_repeatCount="2000"
+        app:lottie_repeatMode="restart" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+
+        android:padding="15dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/fatigue"
+        app:lottie_repeatCount="2000"
+        app:lottie_repeatMode="restart" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:padding="15dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/fever"
+        app:lottie_repeatCount="2000"
+        app:lottie_repeatMode="restart" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:padding="15dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/headache"
+        app:lottie_repeatCount="2000"
+        app:lottie_repeatMode="restart"
+        app:lottie_speed="1" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:padding="15dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/hemoptysis"
+        app:lottie_repeatCount="2000"
+        app:lottie_repeatMode="restart"
+        app:lottie_speed="1" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:padding="15dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/pneumonia"
+        app:lottie_repeatCount="2000"
+        app:lottie_repeatMode="restart"
+        app:lottie_speed="1" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:padding="15dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/shortness_in_breathing"
+        app:lottie_repeatCount="2000"
+        app:lottie_repeatMode="restart"
+        app:lottie_speed="1" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:padding="15dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/sore_throat"
+        app:lottie_repeatCount="2000"
+        app:lottie_repeatMode="restart"
+        app:lottie_speed="1" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:padding="15dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/diarrhea"
+        app:lottie_repeatCount="2000"
+        app:lottie_repeatMode="restart"
+        app:lottie_speed="1" />
+
+
+
+</LinearLayout>
+
+

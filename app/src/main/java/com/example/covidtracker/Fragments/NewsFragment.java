@@ -24,6 +24,7 @@ import com.kwabenaberko.newsapilib.models.Article;
 import com.kwabenaberko.newsapilib.models.request.TopHeadlinesRequest;
 import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,6 +36,7 @@ public class NewsFragment extends Fragment {
     private RecyclerView newsRecyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
     private ProgressBar pb;
+    private  List<Article> articlesItems;
 
 
     public NewsFragment() {
@@ -63,6 +65,7 @@ public class NewsFragment extends Fragment {
 
 
 
+
         getNews();
 
 
@@ -80,9 +83,11 @@ public class NewsFragment extends Fragment {
                     @Override
                     public void onSuccess(ArticleResponse response) {
                         pb.setVisibility(View.INVISIBLE);
-                        List<Article> articlesItems = response.getArticles();
+                        articlesItems = response.getArticles();
                         adapter = new NewsAdapter(getContext(), articlesItems);
                         newsRecyclerView.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
+
                     }
 
                     @Override

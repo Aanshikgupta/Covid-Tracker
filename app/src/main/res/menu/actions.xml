@@ -6,9 +6,13 @@
         android:title="Prevention"
         />
 
-    <item android:id="@+id/info"
-        android:title="Info"
+    <item android:id="@+id/symptoms"
+        android:title="Symptoms"
         />
+    <item android:id="@+id/helpline"
+        android:title="Helpline"
+        />
+
 
 
 
