@@ -1,4 +1,4 @@
-package com.example.covidtracker;
+package com.example.covidtracker.Activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,25 +13,32 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.airbnb.lottie.L;
-import com.example.covidtracker.Adapters.StatesAdapter;
-import com.example.covidtracker.Fragments.IndiaFragment;
+import com.example.covidtracker.Adapters.CountriesAdapter;
+import com.example.covidtracker.CovidModels.GlobalModels.ResponseItem;
+import com.example.covidtracker.Fragments.GlobalFragment;
+import com.example.covidtracker.R;
 
-public class StateActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-    private RecyclerView statesRecyclerView;
+public class CountriesActivity extends AppCompatActivity {
+
+    private RecyclerView countriesRecyclerView;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_state);
+        setContentView(R.layout.activity_countries);
         isNetworkConnectionAvailable();
+        List<ResponseItem> countries = new ArrayList<>();
+        countries= GlobalFragment.countriesItems;
+        countriesRecyclerView=findViewById(R.id.countriesRecyclerView);
+        countriesRecyclerView.setHasFixedSize(true);
+        countriesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        CountriesAdapter adapter=new CountriesAdapter(CountriesActivity.this, countries);
+        countriesRecyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
-        statesRecyclerView=findViewById(R.id.statesRecyclerView);
-        statesRecyclerView.setHasFixedSize(true);
-        statesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        StatesAdapter adapter=new StatesAdapter(this, IndiaFragment.stateList);
-        statesRecyclerView.setAdapter(adapter);
     }
 
     public void checkNetworkConnection(){
@@ -74,4 +81,5 @@ public class StateActivity extends AppCompatActivity {
             return false;
         }
     }
+
 }

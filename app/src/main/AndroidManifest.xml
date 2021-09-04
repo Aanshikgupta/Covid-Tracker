@@ -14,14 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidTracker">
         <activity
-            android:name=".OptionsActivity"
+            android:name=".Activities.OptionsActivity"
             android:exported="true"
             android:screenOrientation="portrait">
 
 
         </activity>
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activities.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,15 +31,15 @@
 
         </activity>
         <activity
-            android:name=".StateActivity"
+            android:name=".Activities.StateActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity
-            android:name=".CountriesActivity"
+            android:name=".Activities.CountriesActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|adjustResize"></activity>
     </application>

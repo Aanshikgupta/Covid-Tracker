@@ -17,7 +17,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.covidtracker.Adapters.TopFiveAdapter;
-import com.example.covidtracker.CountriesActivity;
+import com.example.covidtracker.Activities.CountriesActivity;
 import com.example.covidtracker.CovidModels.GlobalModels.GlobalData;
 import com.example.covidtracker.CovidModels.GlobalModels.ResponseItem;
 import com.example.covidtracker.Network.Global.GlobalApiHolder;

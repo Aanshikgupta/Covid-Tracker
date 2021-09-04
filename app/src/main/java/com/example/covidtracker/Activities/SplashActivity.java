@@ -1,15 +1,13 @@
-package com.example.covidtracker;
+package com.example.covidtracker.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
+import com.example.covidtracker.R;
 
 public class SplashActivity extends AppCompatActivity {
 

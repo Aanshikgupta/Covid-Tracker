@@ -1,4 +1,4 @@
-package com.example.covidtracker;
+package com.example.covidtracker.Activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 
 import com.example.covidtracker.Adapters.FragmentAdapter;
 import com.example.covidtracker.Network.Global.GlobalApiHolder;
+import com.example.covidtracker.R;
 import com.google.android.material.tabs.TabLayout;
 
 import org.eazegraph.lib.charts.PieChart;
@@ -41,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     private TextView activeCount, deathCount, recoveredCount, confirmedCount, activeInc, deathInc, recoveredInc, confirmedInc;
     private ImageView optionButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         optionButton = findViewById(R.id.optionMenu);
 
         isNetworkConnectionAvailable();
-
 
         setTabs();
 
@@ -112,11 +112,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         popup.show();
     }
 
-
     private void setTabs() {
         viewPager = findViewById(R.id.viewPager);
         tabLayout = findViewById(R.id.tabLayout);
-
+        viewPager.setEnabled(false);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentAdapter adapter = new FragmentAdapter(fragmentManager, getLifecycle());
         viewPager.setAdapter(adapter);
@@ -133,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         tabLayout.addTab(global);
         tabLayout.addTab(vacc);
         tabLayout.addTab(news);
+
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -158,8 +158,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
-    }
 
+
+    }
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {

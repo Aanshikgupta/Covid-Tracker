@@ -22,7 +22,6 @@
             android:layout_weight="4"
             android:gravity="left"
             android:text="Country"
-            android:layout_marginRight="3dp"
             android:textColor="@color/main_text"
             android:textSize="13sp" />
 
@@ -45,6 +44,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
 
+                    android:layout_gravity="left"
                     app:srcCompat="@drawable/rise"
                     app:tint="@color/active" />
 
@@ -52,8 +52,7 @@
                     android:id="@+id/activeItemInc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:gravity="left"
+                    android:gravity="center"
                     android:text="TextView"
                     android:textColor="@color/active"
                     android:textSize="10sp" />
@@ -66,8 +65,9 @@
                 android:id="@+id/activeItemCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="12dp"
+                android:layout_gravity="left"
 
+                android:layout_marginVertical="12dp"
                 android:layout_weight="1"
                 android:text="Active"
                 android:textColor="@color/active"
@@ -93,6 +93,7 @@
                     android:id="@+id/imageView8"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
+                    android:layout_gravity="left"
                     app:layout_constraintBottom_toBottomOf="@+id/confirmedItemInc"
                     app:layout_constraintEnd_toStartOf="@+id/confirmedItemInc"
                     app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -118,8 +119,9 @@
                 android:id="@+id/confirmedItemCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="12dp"
+                android:layout_gravity="left"
 
+                android:layout_marginVertical="12dp"
                 android:layout_weight="1"
                 android:text="Confirmed"
                 android:textColor="@color/confirmed"
@@ -146,6 +148,7 @@
                     android:id="@+id/imageView9"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
+                    android:layout_gravity="left"
                     app:layout_constraintBottom_toTopOf="@+id/recoveredItemCount"
                     app:layout_constraintEnd_toStartOf="@+id/recoveredItemInc"
                     app:layout_constraintStart_toStartOf="@+id/guideline5"
@@ -176,6 +179,7 @@
                 android:id="@+id/recoveredItemCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:layout_marginVertical="12dp"
                 android:layout_weight="1"
                 android:text="Recovered"
@@ -234,8 +238,9 @@
                 android:id="@+id/deathItemCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="12dp"
+                android:layout_gravity="left"
 
+                android:layout_marginVertical="12dp"
                 android:layout_marginStart="8dp"
                 android:text="Deaths"
                 android:textColor="@color/deaths"

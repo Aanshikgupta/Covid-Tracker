@@ -1,4 +1,4 @@
-package com.example.covidtracker;
+package com.example.covidtracker.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.example.covidtracker.Fragments.PreventionFragment;
 import com.example.covidtracker.Fragments.SymptomsFragment;
+import com.example.covidtracker.R;
 
 public class OptionsActivity extends AppCompatActivity{
 

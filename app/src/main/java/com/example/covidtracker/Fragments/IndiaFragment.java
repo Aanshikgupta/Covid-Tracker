@@ -23,7 +23,7 @@ import com.example.covidtracker.CovidModels.IndiaModels.Summary;
 import com.example.covidtracker.Network.India.IndiaApiHolder;
 import com.example.covidtracker.Network.RetrofitClass;
 import com.example.covidtracker.R;
-import com.example.covidtracker.StateActivity;
+import com.example.covidtracker.Activities.StateActivity;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
