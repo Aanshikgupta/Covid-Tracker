@@ -1,5 +1,19 @@
 package com.example.covidtracker.Activities;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -8,27 +22,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import com.example.covidtracker.Adapters.FragmentAdapter;
 import com.example.covidtracker.Network.Global.GlobalApiHolder;
 import com.example.covidtracker.R;
 import com.google.android.material.tabs.TabLayout;
 
 import org.eazegraph.lib.charts.PieChart;
-
 
 import retrofit2.Retrofit;
 
@@ -178,9 +177,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 startActivity(i);
                 return true;
             case R.id.helpline:
-                i = new Intent(MainActivity.this, OptionsActivity.class);
-                i.putExtra("menuOptionSelected", 2);
-                startActivity(i);
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+911123978046"));
+                startActivity(intent);
                 return true;
 
             default:

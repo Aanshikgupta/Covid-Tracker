@@ -46,11 +46,7 @@ public class OptionsActivity extends AppCompatActivity{
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_options,new SymptomsFragment()).commit();
                 break;
 
-            case 2:
-                Intent intent=new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:+911123978046"));
-                startActivity(intent);
-                break;
+
 
 
             default:
